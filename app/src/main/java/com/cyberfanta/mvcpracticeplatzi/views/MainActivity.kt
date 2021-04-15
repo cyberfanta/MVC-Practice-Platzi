@@ -11,6 +11,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.hide()
+
+
+
         Log.i("MainActivity", CryptoUtils.encrypt())
         Log.i("MainActivity", CryptoUtils.decrypt("NyWoRYUPmrIl+d1onvDuPgnJs3CxeamuFFeqE3F3PPu++FUPy1/N0w=="))
     }
