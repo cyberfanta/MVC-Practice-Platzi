@@ -17,7 +17,7 @@
         android:clipToPadding="false">
 
         <TextView
-            android:text="TextView"
+            android:text="@string/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvTitle"
@@ -40,13 +40,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
             app:layout_constraintHorizontal_bias="0.4"
-            android:layout_marginLeft="24dp"
             android:layout_marginStart="24dp"/>
 
         <TextView
-            android:text="TextView"
+            android:text="@string/textView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/tvDescriptionShort"
@@ -58,7 +56,7 @@
             app:layout_constraintHorizontal_bias="0.0"/>
 
         <TextView
-            android:text="TextView"
+            android:text="@string/textView"
             android:layout_width="wrap_content"
             android:layout_height="37dp"
             android:id="@+id/tvDate"
@@ -79,7 +77,7 @@
             android:textSize="12sp"/>
 
         <TextView
-            android:text="TextView"
+            android:text="@string/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvCategory"
@@ -90,10 +88,8 @@
             app:layout_constraintTop_toBottomOf="@+id/tvDescriptionShort"
             android:layout_marginStart="24dp"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
-            android:layout_marginLeft="24dp"
             android:layout_marginEnd="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginRight="24dp"
             android:layout_marginTop="4dp"
             app:layout_constraintHorizontal_bias="0.0"
             android:padding="7dp"
