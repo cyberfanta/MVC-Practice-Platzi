@@ -1,4 +1,4 @@
-package com.anncode.offersandcoupons
+package com.cyberfanta.mvcpracticeplatzi.views
 
 import com.google.gson.JsonObject
 import java.lang.Exception
@@ -9,21 +9,21 @@ import java.util.*
 
 class Coupon(couponJson: JsonObject?) : Serializable {
 
-    lateinit var id: String
-    lateinit var image_url: String
-    lateinit var title: String
-    lateinit var descriptionShort: String
-    lateinit var category: String
-    lateinit var description:String
-    lateinit var offer: String
-    lateinit var website: String
-    lateinit var endDate: String
-    lateinit var url: String
+    var id: String = ""
+    var imageUrl: String = ""
+    var title: String = ""
+    var descriptionShort: String = ""
+    var category: String = ""
+    var description:String = ""
+    var offer: String = ""
+    var website: String = ""
+    var endDate: String = ""
+    var url: String = ""
 
     init {
         try {
             id                  = couponJson!!.get(ID).asString
-            image_url           = couponJson.get(IMAGE_URL).asString
+            imageUrl           = couponJson.get(IMAGE_URL).asString
             title               = couponJson.get(TITLE).asString
             descriptionShort    = chunkWords(couponJson.get(DESCRIPTION_SHORT).asString, ' ', 5)
             category            = chunkWords(couponJson.get(CATEGORY).asString, ',', 1)
@@ -32,11 +32,9 @@ class Coupon(couponJson: JsonObject?) : Serializable {
             website             = couponJson.get(WEBSITE).asString
             endDate             = getFormatDate(couponJson.get(END_DATE).asString)
             url                 = couponJson.get(URL).asString
-        }catch (e: Exception){
+        } catch (e: Exception){
             e.printStackTrace()
         }
-
-
     }
 
     companion object {
@@ -56,7 +54,7 @@ class Coupon(couponJson: JsonObject?) : Serializable {
         val format = SimpleDateFormat("yyyy-MM-dd", Locale.ROOT)
         val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.ROOT)
         try {
-            val parsedDateFormat = format.parse(dateCoupon)
+            val parsedDateFormat = format.parse(dateCoupon) as Date
             val cal = Calendar.getInstance()
             cal.time = parsedDateFormat
             return dateFormat.format(cal.time)
@@ -66,13 +64,12 @@ class Coupon(couponJson: JsonObject?) : Serializable {
         }
     }
 
-
     private fun chunkWords(string: String, delimiter: Char, quantity: Int): String {
         val words = string.split(delimiter)
         var newString = ""
 
         for (i in 0..quantity){
-            newString += words.get(i) + " "
+            newString += words[i] + " "
         }
 
         return newString

@@ -17,7 +17,7 @@
     <style name="btnOpenOffer" parent="Theme.AppCompat.Light">
         <item name="colorControlHighlight">#FFFFFF</item>
         <item name="colorButtonNormal">#726fda</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:borderlessButtonStyle" />
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
     </style>
 </resources>
